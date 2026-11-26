@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>생일 축하해! 🎂</title>
+  <style>
+    /* 기본 여백 초기화 및 박스 모델 설정 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* 화면 전체를 채우고 Flexbox로 콘텐츠를 정중앙에 배치 */
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* 따뜻하고 사랑스러운 분홍색 배경 및 은은한 그라데이션 */
+      background-color: #ff759f;     
+	background-image: radial-gradient(circle at center, #ff8fb1 0%, #ff6596 100%);
+      color: #ffffff;
+      /* 외부 폰트 없이 깔끔한 시스템 산세리프 폰트 스택 적용 */
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Malgun Gothic", "맑은 고딕", sans-serif;
+      text-align: center;
+      overflow: hidden;
+      padding: 1.5rem;
+    }
+
+    /* 중앙 콘텐츠 컨테이너 */
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      max-width: 100%;
+    }
+
+    /* 통통 튀는 케이크 이모지 스타일 및 애니메이션 연결 */
+    .cake-emoji {
+      font-size: clamp(4.5rem, 15vw, 7.5rem);
+      line-height: 1.1;
+      display: inline-block;
+      user-select: none;
+      filter: drop-shadow(0 12px 16px rgba(180, 30, 80, 0.25));
+      transform-origin: bottom center;
+      animation: livelyBounce 1.4s cubic-bezier(0.28, 0.84, 0.42, 1) infinite;
+    }
+
+    /* 생일 축하해! 메인 제목 스타일 */
+    .birthday-title {
+      font-size: clamp(2.5rem, 9vw, 5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #ffffff;
+      text-shadow: 0 4px 16px rgba(180, 30, 80, 0.28);
+      word-break: keep-all;
+    }
+
+    /* 쫀득하고 생동감 있는 바운스 키프레임 애니메이션 */
+    @keyframes livelyBounce {
+      0% {
+        transform: translateY(0) scale(1.06, 0.94);
+      }
+      15% {
+        transform: translateY(0) scale(1.08, 0.92);
+      }
+      45% {
+        transform: translateY(-38px) scale(0.95, 1.05);
+      }
+      55% {
+        transform: translateY(-42px) scale(0.97, 1.03);
+      }
+      85% {
+        transform: translateY(0) scale(1.07, 0.93);
+      }
+      95% {
+        transform: translateY(-5px) scale(0.99, 1.01);
+      }
+      100% {
+        transform: translateY(0) scale(1, 1);
+      }
+    }
+
+    /* 접근성: 동작 줄이기 설정이 켜진 경우 애니메이션 완화 */
+    @media (prefers-reduced-motion: reduce) {
+      .cake-emoji {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 화면 정중앙에 배치되는 생일 축하 영역 -->
+  <main class="card-container" role="main" aria-label="생일 축하 메시지">
+    <!-- 위아래로 통통 튀는 케이크 이모지 -->
+    <div class="cake-emoji" aria-hidden="true">🎂</div>
+    
+    <!-- 큰 흰색 제목 -->
+    <h1 class="birthday-title">생일 축하해!</h1>
+  </main>
+</body>
+</html>
